@@ -55,6 +55,8 @@ PAYMENTS = [
     "attributes.transactionStatusInformation",
     "gratuityAmount",
     "details.giftcardUuid",
+    "attributes.acquirerMID",
+    "attributes.acqSystemTraceAuditNr",
 ]
 
 
@@ -99,6 +101,3 @@ FINAL = [
     "sku",
     "barcode",
 ]
-
-
-
