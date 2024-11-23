@@ -21,6 +21,10 @@ class GetPayments(Authenticate):
         super().__init__(client_id, api_key)
 
         self._fetch_purchases_from_zettle()
+        self._convert_pence_to_pounds()
+        self.normalise_quantities()
+        self.augment_data()
+
 
     def _drop_columns(self: Self, list_name:str) -> Self:
         if list_name.lower() == "initial":
@@ -113,6 +117,7 @@ class GetPayments(Authenticate):
 
         self._format_zettle_payments()
         self._convert_pence_to_pounds()
+        self.normalise_quantities()
 
         return self
 
